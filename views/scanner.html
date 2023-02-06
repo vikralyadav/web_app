@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE READER</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #reader {
+            width: 400px;
+        }
+        #result{
+            text-align: center;
+            font: size 1.5em; 
+        }
+
+    </style>
+     <script src="html5-qrcode.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+    
+
+        <main>
+            <div id="reader"></div>
+            <div id="result"></div>
+        </main>
+        <br><br>
+
+        
+
+            
+<br><br>
+
+            <form action="/set" method="post">
+     PRODUCT ID:  <input type="text" name="id" id="store" required><br><br>
+    Date: <input type="date" id="price" name="date" required> <br><br>
+  <button type="submit" id="add"> ADD </button>
+</form>
+      
+    
+      <script>
+             const scanner =  new  Html5QrcodeScanner('reader',{
+                qrbox:{
+
+                    width:250,
+                    height:250
+                },
+                fps:20,
+             });
+             
+             scanner.render(success,error)
+             function success(result){
+               // console.log(result)
+                document.getElementById('store').value = `${result}`;
+              
+
+               }
+                function error(err)
+                 {
+                console.error(err);
+                 }
+               
+                  
+    </script>
+    </body>
+    </html>
+
+   
+   

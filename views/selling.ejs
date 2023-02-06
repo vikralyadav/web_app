@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <% data.forEach(function(data) { %>
+        <div class="m-2" style="display: inline-block">
+            <div style="display: inline-block">
+                    <br>
+                     
+                <div id ="main">
+                    <table >
+                        <tr>
+                          <th>product Id </th>
+                          <th>Expire Date </th>
+                        </tr>
+                        <tr>
+                          <td> <%= data.product_Id %></td>
+                          <td><%= data.expire_date %></td>
+                         
+                        </tr>
+                      </table>
+										
+                </div>
+
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+
+
+</body>
+</html>
